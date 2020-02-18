@@ -1,0 +1,162 @@
+.recipe-body {
+  background: #888;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-form {
+  position: relative;
+  padding: 25px;
+  box-sizing: border-box;
+  width: 20%;
+  background: #fff;
+  box-shadow: -2px -2px 10px 3px #686666;
+  z-index: 1;
+}
+
+.header-title {
+  font-family: 'Sriracha', cursive;
+  color: darkseagreen;
+  display: block;
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.search-bar {
+  font-family: 'Titillium Web', sans-serif;
+  background: #f1f1f1;
+  width: 75%;
+  padding: 10px;
+  outline: 0;
+  color: #313131;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: top;
+  border: 1px dashed darkseagreen;
+  box-sizing: border-box;
+}
+
+.search-bar:focus {
+  border-color: darkseagreen;
+}
+
+.search-button {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: darkseagreen;
+  width: 25%;
+  border: none;
+  font-size: 17px;
+  color: white;
+  outline: 0;
+  background-blend-mode: normal, lighten, soft-light;
+  cursor: pointer;
+  height: 50px;
+  vertical-align: top;
+}
+
+.recipes-container {
+  width: 80%;
+  font-size: 0;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.recipes-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.search-filter .filters {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px -5px;
+}
+
+.search-filter ul .filter {
+  position: relative;
+  font-family: 'Titillium Web', sans-serif;
+  width: calc(33.33333% - 10px);
+  display: inline-block;
+  padding: 10px;
+  margin: 0 5px 10px 5px;
+  border: 1px dotted #747373;
+  cursor: pointer;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+  text-align: center;
+  color: #313131;
+  overflow: hidden;
+}
+
+.search-filter ul .filter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgb(143, 188, 143);
+  transition: 0.25s;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.search-filter ul .filter:hover::before {
+  left: -85%;
+  transform: skewX(-10deg);
+}
+
+.search-filter ul .filter.active-filter::before {
+  left: 0;
+  transition: 0.125s;
+}
+
+.search-filter ul .filter.active-filter:hover::before {
+  left: 0;
+  transform: skewX(0);
+}
+
+.search-filter ul .filter:hover {
+  border: 1px solid #92c392;
+}
+
+.search-filter ul .filter.active-filter {
+  color: #fff;
+  border: 1px solid #92c392;
+  transition: color .125s ;
+}
+
+.footer-credits p {
+  font-family: 'Sriracha', cursive;
+  text-align: center;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+p.search-filter-header {
+  font-family: 'Sriracha', cursive;
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0 0;
+  color: #313131;
+}
+
+/* Track */
+.recipes-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.recipes-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #9890e3 0%, #474298 100%);
+}
+
+/* Handle on hover */
+.recipes-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
